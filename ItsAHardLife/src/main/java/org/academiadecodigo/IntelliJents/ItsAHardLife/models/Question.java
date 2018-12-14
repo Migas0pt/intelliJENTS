@@ -1,27 +1,47 @@
 package org.academiadecodigo.IntelliJents.ItsAHardLife.models;
 
-import java.util.ArrayList;
+import org.academiadecodigo.IntelliJents.ItsAHardLife.models.Answer;
 
-/**
- * Created by codecadet on 13/12/2018.
- */
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+@Entity
+@Table(name = "question")
 public class Question {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private int level;
     private String text;
-    private ArrayList<String> answers;
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "question",
+    fetch = FetchType.EAGER,
+    orphanRemoval = true)
+    private List<Answer> answers;
     private int correctAnswer;
 
-    public Question(int level, String text, String answers1, String answers2, String answers3, String answers4, int correctAnswer) {
+    public Question() {
+    }
+
+    public Question(int level, String text, Answer answers1, Answer answers2, Answer answers3, Answer answers4, int correctAnswer) {
         this.level = level;
         this.text = text;
-        this.answers = new ArrayList(4);
+        this.answers = new LinkedList<>();
         this.answers.add(answers1);
         this.answers.add(answers2);
         this.answers.add(answers3);
         this.answers.add(answers4);
         this.correctAnswer = correctAnswer;
+    }
+
+    public void addAnswer(Answer answer){
+
+        answers.add(answer);
+        answer.setQuestion(this);
+
     }
 
     public int getId() {
@@ -39,8 +59,8 @@ public class Question {
     }
 
 
-    public ArrayList<String> getAnswers() {
-        return answers;
+    public List<Answer> getAnswers() {
+            return answers;
     }
 
 

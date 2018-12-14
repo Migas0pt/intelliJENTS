@@ -12,7 +12,4 @@
     <mvc:annotation-driven/>
     <!-- Base package to search for spring beans -->
     <context:component-scan base-package="org.academiadecodigo.IntelliJents"/>
-    <!--<mvc:interceptors>
-        <bean class="org.academiadecodigo.javabank.interceptor.LogRequestsInterceptor"/>
-    </mvc:interceptors>-->
 </beans>

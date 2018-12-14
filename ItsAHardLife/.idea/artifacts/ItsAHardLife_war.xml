@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ItsAHardLife:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="Hackaton.war">
-      <element id="artifact" artifact-name="ItsAHardLife:war exploded" />
-    </root>
-  </artifact>
-</component>
