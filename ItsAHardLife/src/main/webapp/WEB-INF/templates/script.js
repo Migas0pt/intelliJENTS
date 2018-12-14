@@ -82,7 +82,7 @@ function start() {
             insert();
         }
     };
-    XMLHttp.open("GET", "info.txt", true);
+    XMLHttp.open("GET", "", true);
     XMLHttp.send();
 }
 

@@ -3,6 +3,8 @@ package org.academiadecodigo.IntelliJents.ItsAHardLife.services;
 import org.academiadecodigo.IntelliJents.ItsAHardLife.Randomizer;
 import org.academiadecodigo.IntelliJents.ItsAHardLife.models.Question;
 import org.academiadecodigo.IntelliJents.ItsAHardLife.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +13,7 @@ import java.util.Random;
 /**
  * Created by codecadet on 13/12/2018.
  */
+@Service
 public class GameService {
 
     private boolean isActive;
@@ -22,6 +25,7 @@ public class GameService {
         return isActive;
     }
 
+
     public void setActive(boolean active) {
         isActive = active;
     }
@@ -30,6 +34,7 @@ public class GameService {
         return activeUser;
     }
 
+
     public void setActiveUser(User activeUser) {
         this.activeUser = activeUser;
     }
@@ -37,6 +42,7 @@ public class GameService {
     public int getLevel() {
         return level;
     }
+
 
     public void setLevel(int level) {
         this.level = level;
