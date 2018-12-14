@@ -122,7 +122,7 @@
 
   <build>
 
-    <finalName>Hackaton</finalName>
+    <finalName>HardLife</finalName>
 
     <plugins>
       <plugin>
